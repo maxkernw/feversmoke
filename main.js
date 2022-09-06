@@ -18,12 +18,16 @@ const newContext = () => {
   const aCtx = window.AudioContext || window.webkitAudioContext;
   return new aCtx({ sampleRate: 48000 });
 };
+let started = false;
 window.addEventListener("click", () => {
-  init();
-  animate();
-  const div = document.querySelector("div");
-  if (div) {
-    div.style.opacity = 0;
+  if (!started) {
+    init();
+    animate();
+    const div = document.querySelector("div");
+    if (div) {
+      div.style.opacity = 0;
+    }
+    started = true;
   }
 });
 
