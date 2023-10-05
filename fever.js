@@ -104,7 +104,6 @@ export class Art {
             this.oscillator.disconnect()
             this.convolver.disconnect();
             this.output.disconnect();
-            console.log(this.convolver, this.output)
         }
 
     }
